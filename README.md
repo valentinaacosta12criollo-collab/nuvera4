@@ -101,7 +101,7 @@
         <!-- 🧴 Tarjeta de producto con imagen real -->
         <aside class="product-card" id="producto" aria-labelledby="producto-title">
           <div class="product-image" role="img" aria-label="Tarro de crema Nuvéra - Crema de Cebo de Res">
-            <img src="producto-nuvera.png" alt="Tarro de crema Nuvéra - Crema de Cebo de Res">
+            <img src="crema.png" alt="Tarro de crema Nuvéra - Crema de Cebo de Res">
           </div>
           <h3 id="producto-title" style="margin:14px 0 0">Crema Nuvéra — 60 ml</h3>
           <div class="price">$28.000 COP</div>
