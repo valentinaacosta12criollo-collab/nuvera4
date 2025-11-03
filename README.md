@@ -1,4 +1,4 @@
-
+<!doctype html>
 <html lang="es">
 <head>
   <meta charset="utf-8" />
@@ -19,7 +19,7 @@
       --radius:14px;
     }
     *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:linear-gradient(180deg,var(--marfil),#fff);color:#111}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:linear-gradient(180deg,var(--marfil),#fff);color:#111;scroll-behavior:smooth;}
     .container{max-width:var(--max-width);margin:0 auto;padding:28px}
 
     header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
@@ -33,8 +33,11 @@
     .hero h1{font-size:40px;margin:0 0 12px;line-height:1.02}
     .hero p{color:var(--gris);margin:0 0 20px}
     .cta-row{display:flex;gap:12px;align-items:center}
-    .btn{background:var(--vino);color:white;padding:12px 18px;border-radius:10px;border:0;font-weight:600;cursor:pointer}
-    .btn-outline{background:transparent;border:2px solid var(--vino);color:var(--vino);padding:10px 16px;border-radius:10px;font-weight:600;cursor:pointer}
+    .btn{background:var(--vino);color:white;padding:12px 18px;border-radius:10px;border:0;font-weight:600;cursor:pointer;transition:all .2s ease}
+    .btn:hover{background:var(--vino-bright);}
+    .btn:active{transform:scale(0.97);}
+    .btn-outline{background:transparent;border:2px solid var(--vino);color:var(--vino);padding:10px 16px;border-radius:10px;font-weight:600;cursor:pointer;transition:all .2s ease}
+    .btn-outline:hover{background:var(--vino);color:#fff}
 
     .product-card{background:white;border-radius:var(--radius);padding:18px;box-shadow:0 6px 22px rgba(0,0,0,0.06)}
     .product-image{height:320px;border-radius:10px;background:linear-gradient(180deg,#f8f6f3,#fff);display:flex;align-items:center;justify-content:center;color:var(--gris);overflow:hidden;}
@@ -60,9 +63,8 @@
 <body>
   <div class="container">
     <header>
-      <!-- 🖼️ LOGO DE NUVÉRA -->
       <div class="brand">
-        <img src="logo.png" alt="Logo de Nuvéra"> <!-- Cambia por tu logo -->
+        <img src="logo.png" alt="Logo de Nuvéra">
         <div class="logo-text">
           <strong>Nuvéra</strong>
           <div class="tag">Cuidado natural con cebo de res para renovar la piel</div>
@@ -111,8 +113,8 @@
           <div class="price">$28.000 COP</div>
           <p style="color:var(--gris);margin-top:8px">Renueva la piel aportando lípidos naturales y mejorando la textura.</p>
           <div style="margin-top:12px;display:flex;gap:8px">
-            <button class="btn" style="flex:1">Añadir al carrito</button>
-            <button class="btn-outline" style="flex:1">Comprar en 1 clic</button>
+            <button class="btn" style="flex:1" onclick="window.location.href='#form-compra'">Añadir al carrito</button>
+            <button class="btn-outline" style="flex:1" onclick="window.location.href='#form-compra'">Comprar en 1 clic</button>
           </div>
         </aside>
       </section>
@@ -135,44 +137,26 @@
         </div>
       </section>
 
-      <section>
-        <h2 style="margin:4px 0 12px">Ingredientes y proceso</h2>
-        <p style="color:var(--gris);max-width:850px">Nuestra crema se elabora con <strong>cebo de res purificado</strong>, aceite de jojoba, manteca de karité, vitamina E y extractos botánicos seleccionados. El cebo se somete a procesos de purificación y filtrado para eliminar impurezas y garantizar seguridad cosmética. Producimos en pequeños lotes con pruebas de estabilidad y control de calidad.</p>
-
-        <div style="display:flex;gap:18px;margin-top:18px;flex-wrap:wrap">
-          <div style="flex:1;min-width:220px;background:white;padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.04)">
-            <h4>Modo de uso</h4>
-            <ol style="margin:8px 0 0 18px;color:var(--gris)">
-              <li>Limpiar la piel con un limpiador suave.</li>
-              <li>Aplicar una pequeña cantidad sobre la piel húmeda.</li>
-              <li>Masajear hasta su completa absorción.</li>
-            </ol>
-          </div>
-          <div style="flex:1;min-width:220px;background:white;padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.04)">
-            <h4>Precauciones</h4>
-            <ul style="margin:8px 0 0 18px;color:var(--gris)">
-              <li>Hacer prueba en una pequeña área si la piel es sensible.</li>
-              <li>Evitar contacto con ojos. En caso de irritación, suspender uso.</li>
-              <li>No ingerir. Mantener fuera del alcance de los niños.</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
       <section id="contacto">
-        <h2 style="margin:4px 0 12px">Contáctanos</h2>
+        <h2 style="margin:4px 0 12px">Contáctanos o finaliza tu compra</h2>
         <div style="display:grid;grid-template-columns:1fr 320px;gap:20px;align-items:start">
-          <form style="background:white;padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.04)" onsubmit="event.preventDefault();alert('Gracias — formulario demo (sin backend)');">
-            <label for="name" style="display:block;margin-bottom:8px;font-weight:600">Nombre</label>
+          <form id="form-compra" style="background:white;padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.04)" onsubmit="event.preventDefault();alert('Gracias por tu compra — formulario demo (sin backend)');">
+            <label for="name" style="display:block;margin-bottom:8px;font-weight:600">Nombre completo</label>
             <input id="name" name="name" required placeholder="Tu nombre" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e7e7e7;margin-bottom:12px" />
 
-            <label for="email" style="display:block;margin-bottom:8px;font-weight:600">Email</label>
+            <label for="email" style="display:block;margin-bottom:8px;font-weight:600">Correo electrónico</label>
             <input id="email" name="email" type="email" required placeholder="correo@ejemplo.com" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e7e7e7;margin-bottom:12px" />
 
-            <label for="message" style="display:block;margin-bottom:8px;font-weight:600">Mensaje</label>
-            <textarea id="message" name="message" rows="4" placeholder="¿En qué podemos ayudarte?" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e7e7e7;margin-bottom:12px"></textarea>
+            <label for="direccion" style="display:block;margin-bottom:8px;font-weight:600">Dirección de envío</label>
+            <input id="direccion" name="direccion" required placeholder="Calle 123 #45 - 67, Ciudad" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e7e7e7;margin-bottom:12px" />
 
-            <button class="btn" type="submit">Enviar mensaje</button>
+            <label for="telefono" style="display:block;margin-bottom:8px;font-weight:600">Teléfono</label>
+            <input id="telefono" name="telefono" type="tel" required placeholder="+57 300 000 0000" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e7e7e7;margin-bottom:12px" />
+
+            <label for="message" style="display:block;margin-bottom:8px;font-weight:600">Mensaje o notas del pedido</label>
+            <textarea id="message" name="message" rows="3" placeholder="¿Deseas algo especial con tu pedido?" style="width:100%;padding:10px;border-radius:8px;border:1px solid #e7e7e7;margin-bottom:12px"></textarea>
+
+            <button class="btn" type="submit">Confirmar pedido</button>
           </form>
 
           <aside style="background:linear-gradient(180deg,#fff,#fff7f2);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.02)">
@@ -200,3 +184,4 @@
   </div>
 </body>
 </html>
+
