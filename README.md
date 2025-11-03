@@ -10,9 +10,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --marfil:#FFF8ED; /* marfil claro */
-      --vino:#C21B2B;  /* rojo vino intenso */
-      --vino-bright:#E11B2B; /* rojo un poco mas brillante */
+      --marfil:#FFF8ED;
+      --vino:#C21B2B;
+      --vino-bright:#E11B2B;
       --gris:#6B6B6B;
       --verde-soft:#EAF7F0;
       --max-width:1100px;
@@ -27,7 +27,6 @@
     .logo{background:linear-gradient(135deg,var(--vino),var(--vino-bright));color:white;padding:10px 14px;border-radius:12px;font-weight:800;font-size:20px;letter-spacing:0.6px}
     .tag{color:var(--gris);font-size:14px}
 
-    /* Hero */
     .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;padding:28px 0}
     .hero h1{font-size:40px;margin:0 0 12px;line-height:1.02}
     .hero p{color:var(--gris);margin:0 0 20px}
@@ -35,23 +34,20 @@
     .btn{background:var(--vino);color:white;padding:12px 18px;border-radius:10px;border:0;font-weight:600;cursor:pointer}
     .btn-outline{background:transparent;border:2px solid var(--vino);color:var(--vino);padding:10px 16px;border-radius:10px;font-weight:600;cursor:pointer}
 
-    /* Product card */
     .product-card{background:white;border-radius:var(--radius);padding:18px;box-shadow:0 6px 22px rgba(0,0,0,0.06)}
-    .product-image{height:320px;border-radius:10px;background:linear-gradient(180deg,#f8f6f3,#fff);display:flex;align-items:center;justify-content:center;color:var(--gris)}
+    .product-image{height:320px;border-radius:10px;background:linear-gradient(180deg,#f8f6f3,#fff);display:flex;align-items:center;justify-content:center;color:var(--gris);overflow:hidden;}
+    .product-image img{max-height:100%;max-width:100%;object-fit:contain;border-radius:10px;}
     .price{font-size:22px;font-weight:700;margin-top:12px}
 
-    /* Features */
     .features{display:flex;gap:18px;margin-top:22px;flex-wrap:wrap}
     .feature{background:var(--verde-soft);padding:12px;border-radius:12px;min-width:180px}
     .feature h4{margin:0 0 6px}
 
-    /* Sections */
     section{padding:28px 0;border-top:1px dashed rgba(0,0,0,0.04)}
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 
     footer{padding:20px 0;color:var(--gris);font-size:14px;text-align:center}
 
-    /* Responsive */
     @media (max-width:900px){
       .hero{grid-template-columns:1fr;}
       .product-image{height:260px}
@@ -102,14 +98,10 @@
           </div>
         </div>
 
+        <!-- 🧴 Tarjeta de producto con imagen real -->
         <aside class="product-card" id="producto" aria-labelledby="producto-title">
-          <div class="product-image" role="img" aria-label="Tarro de crema Nuvéra - imagen ilustrativa">
-            <div>
-              <svg width="120" height="120" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <rect width="24" height="24" rx="6" fill="#fff"/>
-                <path d="M12 3c2 0 3 1 3 3 0 1.2-1 2-2 3-1 1-2 2-2 4" stroke="#C21B2B" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
+          <div class="product-image" role="img" aria-label="Tarro de crema Nuvéra - Crema de Cebo de Res">
+            <img src="producto-nuvera.png" alt="Tarro de crema Nuvéra - Crema de Cebo de Res">
           </div>
           <h3 id="producto-title" style="margin:14px 0 0">Crema Nuvéra — 60 ml</h3>
           <div class="price">$28.000 COP</div>
