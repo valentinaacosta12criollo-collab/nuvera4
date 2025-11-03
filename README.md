@@ -24,7 +24,9 @@
 
     header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{display:flex;align-items:center;gap:12px}
-    .logo{background:linear-gradient(135deg,var(--vino),var(--vino-bright));color:white;padding:10px 14px;border-radius:12px;font-weight:800;font-size:20px;letter-spacing:0.6px}
+    .brand img{height:56px;width:auto;border-radius:12px;object-fit:contain;} /* 👈 Tamaño del logo */
+    .logo-text{display:flex;flex-direction:column;justify-content:center}
+    .logo-text strong{font-weight:800;font-size:20px;color:var(--vino)}
     .tag{color:var(--gris);font-size:14px}
 
     .hero{display:grid;grid-template-columns:1fr 420px;gap:32px;align-items:center;padding:28px 0}
@@ -58,13 +60,15 @@
 <body>
   <div class="container">
     <header>
+      <!-- 🖼️ LOGO DE NUVÉRA -->
       <div class="brand">
-        <div class="logo">Nuvéra</div>
-        <div>
-          <div style="font-weight:600">Nuvéra</div>
+        <img src="logo.png" alt="Logo de Nuvéra"> <!-- Cambia por tu logo -->
+        <div class="logo-text">
+          <strong>Nuvéra</strong>
           <div class="tag">Cuidado natural con cebo de res para renovar la piel</div>
         </div>
       </div>
+
       <nav aria-label="principal">
         <a href="#producto" style="margin-right:14px;color:var(--vino);font-weight:600;text-decoration:none">Producto</a>
         <a href="#beneficios" style="margin-right:14px;color:var(--gris);text-decoration:none">Beneficios</a>
@@ -98,7 +102,7 @@
           </div>
         </div>
 
-        <!-- 🧴 Tarjeta de producto con imagen real -->
+        <!-- 🧴 TARRO DE PRODUCTO -->
         <aside class="product-card" id="producto" aria-labelledby="producto-title">
           <div class="product-image" role="img" aria-label="Tarro de crema Nuvéra - Crema de Cebo de Res">
             <img src="crema.png" alt="Tarro de crema Nuvéra - Crema de Cebo de Res">
