@@ -1,4 +1,4 @@
-<!doctype html>
+
 <html lang="es">
 <head>
   <meta charset="utf-8" />
@@ -24,7 +24,7 @@
 
     header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
     .brand{display:flex;align-items:center;gap:12px}
-    .brand img{height:56px;width:auto;border-radius:12px;object-fit:contain;} /* 👈 Tamaño del logo */
+    .brand img{height:56px;width:auto;border-radius:12px;object-fit:contain;}
     .logo-text{display:flex;flex-direction:column;justify-content:center}
     .logo-text strong{font-weight:800;font-size:20px;color:var(--vino)}
     .tag{color:var(--gris);font-size:14px}
@@ -178,7 +178,13 @@
           <aside style="background:linear-gradient(180deg,#fff,#fff7f2);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.02)">
             <h4 style="margin-top:0">Dónde encontrarnos</h4>
             <p style="color:var(--gris);margin:6px 0">Email: hola@nuvéra.com</p>
-            <p style="color:var(--gris);margin:6px 0">Instagram: @nuvera_oficial</p>
+            <p style="color:var(--gris);margin:6px 0">
+              Instagram:
+              <a href="https://www.instagram.com/crema_nuvera" target="_blank" rel="noopener noreferrer" style="color:var(--vino);font-weight:600;text-decoration:none;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width:16px;height:16px;vertical-align:middle;margin-right:4px;border-radius:3px;">
+                @crema_nuvera
+              </a>
+            </p>
             <p style="color:var(--gris);margin:6px 0">Producción local — envíos nacionales</p>
             <div style="margin-top:12px">
               <button class="btn-outline" onclick="alert('Teléfono demo: +57 300 000 0000')">Ver teléfono</button>
